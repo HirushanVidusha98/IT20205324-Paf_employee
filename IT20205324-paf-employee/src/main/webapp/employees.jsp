@@ -15,7 +15,7 @@
 <body>
 
 <div class="container"><div class="row"><div class="col-6"> 
-<h1>Items Management V10.1</h1>
+<h1>Employee Management</h1>
 <form id="formItem" name="formItem">
  Employee Name: 
  <input id="employeeName" name="employeeName" type="text" 
