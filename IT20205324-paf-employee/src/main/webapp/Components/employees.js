@@ -160,8 +160,10 @@ $(document).on("click", ".btnUpdate", function(event)
 		
 	}
 	
+//..........................
 
-//DELETE
+
+
 $(document).on("click", ".btnRemove", function(event) 
 { 
  $.ajax( 
@@ -178,6 +180,7 @@ $(document).on("click", ".btnRemove", function(event)
 });
 
 
+//...........................
 function onItemDeleteComplete(response, status) 
 { 
 if (status == "success") 

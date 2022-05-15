@@ -246,8 +246,7 @@ public class Employee {
 						   "<th>phone no</th>" +
 						   "<th>Nic no</th>" +
 						   "<th>Gender</th>" +
-						   "<th>address</th>" +
-						   "<th>Update</th><th>Remove</th></tr>";
+						   "<th>address</th>  </tr>";
 
 				String query = "select *  from employee where employeeNumber=' " + employeeNumber + "'" ;
 

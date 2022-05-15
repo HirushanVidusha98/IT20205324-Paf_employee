@@ -46,7 +46,10 @@
  class="btn btn-primary">
  <input type="hidden" id="hidItemIDSave" 
  name="hidItemIDSave" value="">
+ 
 </form>
+
+
 <div id="alertSuccess" class="alert alert-success"></div>
 <div id="alertError" class="alert alert-danger"></div>
 <br>
@@ -57,6 +60,12 @@
  %>
 </div>
 </div> </div> </div> 
-
+<div class="container">
+<br>
+<br>
+<a class="btn btn-primary" href="http://localhost:8040/IT20205324-paf-employee/search.jsp" role="button">Search page</a>
+</div>
+<br>
+<br>
 </body>
 </html>
