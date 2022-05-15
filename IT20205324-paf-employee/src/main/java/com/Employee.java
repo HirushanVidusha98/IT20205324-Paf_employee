@@ -220,6 +220,91 @@ public class Employee {
 		 return output; //return out put
 		 }
 		
+		
+		
+		
+		// view profile details
+		
+		public String viewProfile(String employeeNumber) {
+
+
+			String output = "";
+
+			try {
+				con = DBConnect.connect();
+
+				if (con == null) {
+					return "Error while connecting to the database for reading.";
+				}
+
+				 // Prepare the html table to be displayed
+			     output = "<table border='1'><tr><th>Employee No</th><th>employee Name</th>" +
+						   "<th>EmployeeEmail</th>" +
+						   "<th>Emp Age</th>" +
+						  
+						   "<th>password</th>" +
+						   "<th>phone no</th>" +
+						   "<th>Nic no</th>" +
+						   "<th>Gender</th>" +
+						   "<th>address</th>" +
+						   "<th>Update</th><th>Remove</th></tr>";
+
+				String query = "select *  from employee where employeeNumber=' " + employeeNumber + "'" ;
+
+
+				Statement stmt = con.createStatement();
+
+
+				ResultSet rs = stmt.executeQuery(query);
+      
+				while (rs.next()) {
+					 String employeeNumber1 = Integer.toString(rs.getInt("employeeNumber"));//see
+					 String employeeName = rs.getString("employeeName");
+					 String employeeEmail1 = rs.getString("employeeEmail");
+					 String empAge = rs.getString("empAge");
+					 String password1 = rs.getString("password");
+					 String phone = Integer.toString(rs.getInt("phone"));
+					 String nic = rs.getString("nic");
+					 String gender = rs.getString("gender");
+					 String address = rs.getString("address");
+
+
+             //output the table values
+					output += "<tr><td>" + employeeNumber1 + "</td>";
+					output += "<td>" + employeeName + "</td>";
+					output += "<td>" + employeeEmail1 + "</td>";
+					output += "<td>" + empAge + "</td>";
+					output += "<td>" + password1 + "</td>";
+					output += "<td>" + phone + "</td>";
+					output += "<td>" + nic + "</td>";
+					output += "<td>" + gender + "</td>";
+					output += "<td>" + address + "</td>";
+
+
+         //out put button
+//					 output += "<td><input name='btnUpdate' type='button' value='Update'class='btn btn-secondary'></td>"
+//							 + "<td><form method='post' action=''>"
+//							 + "<input name='btnRemove' type='submit' value='Remove'class='btn btn-danger'>"
+//							 + "<input name='employeeNumber' type='hidden' value='" + employeeNumber
+//							 + "'>" + "</form></td></tr>";
+//			 
+				}
+
+				con.close();
+
+				output += "</table>";
+
+
+			} catch (Exception e) 
+			{
+
+				output = "Error while Viewing the user profile.";
+				System.err.println(e.getMessage());
+			}
+
+			return output;   //return out put
+		}
+
 	
 	}
 
